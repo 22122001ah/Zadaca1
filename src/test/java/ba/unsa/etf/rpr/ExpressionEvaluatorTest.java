@@ -78,4 +78,14 @@ class ExpressionEvaluatorTest extends RuntimeException {
         String ex= "( 1 1 + sqrt ( 9 ) )";
         assertThrows(RuntimeException.class, () -> ExpressionEvaluator.evaluate(ex),"The expression you have entered has illegal parameters");
     }
+    @Test
+    void evaluate14() {
+        String ex= "( 1 + ( sqrt  9 ) )";
+        assertThrows(RuntimeException.class, () -> ExpressionEvaluator.evaluate(ex),"The expression you have entered has illegal parameters");
+    }
+    @Test
+    void evaluate15() {
+        String ex= "( sqrt  9 )";
+        assertThrows(RuntimeException.class, () -> ExpressionEvaluator.evaluate(ex),"The expression you have entered has illegal parameters");
+    }
 }

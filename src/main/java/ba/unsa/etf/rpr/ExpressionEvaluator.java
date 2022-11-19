@@ -123,6 +123,15 @@ int numofrbrackets=0,numoflbrackets=0,op=0,num=0,sq=0;
 
        if(numoflbrackets!=op)
            throw new RuntimeException("The expression you have entered has illegal parameters");
+        if(s.contains("sqrt")){
+            for(int i=0;i<x.length-1;i++){
+if(x[i].equals("(")){
+    if(x[i+1].equals("sqrt") && ( (i>2 && x[i-2].equals(")")) && !x[i+2].equals("(" )))
+        throw new RuntimeException("The expression you have entered has illegal parameters");
+}
+            }
+        }
+
         return true;
 
 }
