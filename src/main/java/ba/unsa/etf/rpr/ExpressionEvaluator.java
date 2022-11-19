@@ -118,10 +118,9 @@ int numofrbrackets=0,numoflbrackets=0,op=0,num=0,sq=0;
     }
         if(numoflbrackets!=numofrbrackets)
             throw new RuntimeException("The expression you have entered has illegal parameters");
-   if(sq==0 && num<=op)
+   if( num-1+sq!=op)
        throw new RuntimeException("The expression you have entered has illegal parameters");
-if(sq>0 && num<op)
-    throw new RuntimeException("The expression you have entered has illegal parameters");
+
        if(numoflbrackets!=op)
            throw new RuntimeException("The expression you have entered has illegal parameters");
         return true;
